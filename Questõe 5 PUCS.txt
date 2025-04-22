@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int a, negativos = 0;
+
+    for (int i = 0; i < 5; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &a);
+
+        if (a < 0) {
+            negativos++;
+        }
+    }
+
+    printf("Quantidade de valores negativos: %d\n", negativos);
+
+    return 0;
+}
+
+RESULTADO:
+Digite o valor 1: 1
+Digite o valor 2: 50
+Digite o valor 3: 3
+Digite o valor 4: 1
+Digite o valor 5: 5
+Quantidade de valores negativos: 0
+
+
+=== Code Execution Successful ===
