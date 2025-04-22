@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int valor, soma = 0, quantidade = 0;
+    float media;
+
+    printf("Digite valores inteiros positivos (valor negativo para encerrar):\n");
+
+    // Lê o primeiro valor
+    scanf("%d", &valor);
+
+    while (valor >= 0) {
+        soma += valor;
+        quantidade++;
+
+        // Lê o próximo valor
+        scanf("%d", &valor);
+    }
+
+    if (quantidade > 0) {
+        media = (float)soma / quantidade;
+        printf("A média aritmética dos valores é: %.2f\n", media);
+    } else {
+        printf("Nenhum valor positivo foi inserido.\n");
+    }
+
+    return 0;
+}
