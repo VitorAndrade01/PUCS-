@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int valor, maior, menor;
+
+    printf("Digite o 1º valor: ");
+    scanf("%d", &valor);
+
+    // Inicializa maior e menor com o primeiro valor
+    maior = menor = valor;
+
+    for (int i = 2; i <= 50; i++) {
+        printf("Digite o %dº valor: ", i);
+        scanf("%d", &valor);
+
+        if (valor > maior) {
+            maior = valor;
+        }
+
+        if (valor < menor) {
+            menor = valor;
+        }
+    }
+
+    printf("\nMaior valor digitado: %d\n", maior);
+    printf("Menor valor digitado: %d\n", menor);
+
+    return 0;
+}
