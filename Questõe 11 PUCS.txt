@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int numero, soma = 0, quantidade = 0;
+    float media;
+
+    printf("Digite números inteiros (0 para encerrar):\n");
+
+    scanf("%d", &numero);
+
+    while (numero != 0) {
+        if (numero % 2 == 0) {
+            soma += numero;
+            quantidade++;
+        }
+
+        scanf("%d", &numero);
+    }
+
+    if (quantidade > 0) {
+        media = (float)soma / quantidade;
+        printf("A média dos números pares digitados é: %.2f\n", media);
+    } else {
+        printf("Nenhum número par foi digitado.\n");
+    }
+
+    return 0;
+}
