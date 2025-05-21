@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int x, max;
+
+    printf("Digite números inteiros (9999 para parar):\n");
+    scanf("%d", &x);
+
+    if (x == 9999) {
+        printf("Nenhum número foi digitado.\n");
+        return 0;
+    }
+
+    max = x;
+    while (x != 9999) {
+        if (x > max) max = x;
+        scanf("%d", &x);
+    }
+
+    printf("Maior número = %d\n", max);
+    return 0;
+}
