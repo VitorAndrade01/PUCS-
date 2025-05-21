@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int uso, total = 0, faixa1 = 0, faixa2 = 0, faixa3 = 0;
+
+    printf("Digite o número de vezes que cada aluno usou o restaurante (9999 para encerrar):\n");
+
+    while (1) {
+        scanf("%d", &uso);
+        if (uso == 9999) break;
+
+        total++;
+
+        if (uso < 10)
+            faixa1++;
+        else if (uso <= 15)
+            faixa2++;
+        else
+            faixa3++;
+    }
+
+    if (total == 0) {
+        printf("Nenhum dado foi inserido.\n");
+        return 0;
+    }
+
+    printf("a) Menos de 10 vezes: %.2f%%\n", (faixa1 * 100.0) / total);
+    printf("b) Entre 10 e 15 vezes: %.2f%%\n", (faixa2 * 100.0) / total);
+    printf("c) Mais de 15 vezes: %.2f%%\n", (faixa3 * 100.0) / total);
+
+    return 0;
+}
