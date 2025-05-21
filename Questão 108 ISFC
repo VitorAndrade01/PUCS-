@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2, quoc = 0, resto;
+
+    printf("Digite dois números inteiros positivos (Num1 e Num2):\n");
+    scanf("%d %d", &num1, &num2);
+
+    if (num2 <= 0) {
+        printf("Divisor deve ser maior que zero.\n");
+        return 1;
+    }
+
+    resto = num1;
+    while (resto >= num2) {
+        resto -= num2;
+        quoc++;
+    }
+
+    printf("Quociente = %d, Resto = %d\n", quoc, resto);
+    return 0;
+}
