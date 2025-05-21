@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int x = 1, soma = 0;
+
+    while (x <= 10) {
+        soma += x;
+        x++;
+    }
+
+    printf("Soma de 1 a 10 = %d\n", soma);
+    return 0;
+}
