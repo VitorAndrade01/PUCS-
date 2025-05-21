@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, resultado = 0;
+
+    printf("Digite dois números inteiros para multiplicar (a * b):\n");
+    scanf("%d %d", &a, &b);
+
+    int positivo = 1;
+    if (b < 0) {
+        b = -b;
+        positivo = -1;
+    }
+
+    for (int i = 0; i < b; i++) {
+        resultado += a;
+    }
+
+    resultado *= positivo;
+
+    printf("Resultado: %d\n", resultado);
+    return 0;
+}
