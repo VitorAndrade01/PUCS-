@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    double massa;
+    int tempo = 0;
+
+    printf("Digite a massa inicial (em gramas): ");
+    scanf("%lf", &massa);
+
+    while (massa >= 0.05) {
+        massa /= 2;
+        tempo += 50;
+    }
+
+    printf("Tempo necessário: %d segundos\n", tempo);
+    return 0;
+}
