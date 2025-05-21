@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int x, qPares = 0, qImpares = 0;
+
+    printf("Digite números inteiros (9999 para parar):\n");
+    scanf("%d", &x);
+
+    while (x != 9999) {
+        if (x % 2 == 0)
+            qPares++;
+        else
+            qImpares++;
+        scanf("%d", &x);
+    }
+
+    printf("Quantidade de Pares = %d, Ímpares = %d\n", qPares, qImpares);
+    return 0;
+}
