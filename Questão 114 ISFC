@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nome[50];
+    float distancia, visitantes, soma_visitantes = 0;
+    int acesso, hoteis_mais_15km = 0, nao_asfaltado = 0;
+
+    printf("Digite os dados dos hotéis (digite 'fim' como nome para encerrar):\n");
+
+    while (1) {
+        printf("\nNome do hotel: ");
+        scanf(" %[^\n]", nome);
+        if (strcmp(nome, "fim") == 0) break;
+
+        printf("Distância do centro (km): ");
+        scanf("%f", &distancia);
+        printf("Número médio de visitantes: ");
+        scanf("%f", &visitantes);
+        printf("Tipo de acesso (0=não asfaltado, 1=asfaltado): ");
+        scanf("%d", &acesso);
+
+        if (distancia > 15)
+            hoteis_mais_15km++;
+
+        if (acesso == 0) {
+            soma_visitantes += visitantes;
+            nao_asfaltado++;
+        }
+
+        if (acesso == 1 && visitantes < 1000)
+            printf("Hotel asfaltado com menos de 1000 visitantes: %s - Distância: %.2f km\n", nome, distancia);
+    }
+
+    printf("\nNúmero de hotéis a mais de 15 km: %d\n", hoteis_mais_15km);
+    if (nao_asfaltado > 0)
+        printf("Média de visitantes em hotéis com acesso não asfaltado: %.2f\n", soma_visitantes / nao_asfaltado);
+    else
+        printf("Nenhum hotel com acesso não asfaltado registrado.\n");
+
+    return 0;
+}
