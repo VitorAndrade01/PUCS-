@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nome[50];
+    int diarias;
+    float total_cliente, total_geral = 0.0, taxa;
+
+    for (int i = 0; i < 30; i++) {
+        printf("Digite o nome do cliente: ");
+        scanf(" %[^\n]", nome);
+        printf("Digite o número de diárias: ");
+        scanf("%d", &diarias);
+
+        if (diarias < 15)
+            taxa = 4.0;
+        else if (diarias == 15)
+            taxa = 3.6;
+        else
+            taxa = 3.0;
+
+        total_cliente = diarias * (50.0 + taxa);
+        total_geral += total_cliente;
+
+        printf("Cliente: %s - Total da conta: R$ %.2f\n", nome, total_cliente);
+    }
+
+    printf("Total ganho pelo hotel: R$ %.2f\n", total_geral);
+    return 0;
+}
