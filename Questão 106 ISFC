@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int x, soma = 0, count = 0;
+    float media;
+
+    printf("Digite números inteiros (9999 para parar):\n");
+    scanf("%d", &x);
+
+    while (x != 9999) {
+        soma += x;
+        count++;
+        scanf("%d", &x);
+    }
+
+    if (count > 0) {
+        media = (float)soma / count;
+        printf("Soma = %d, Média = %.2f\n", soma, media);
+    } else {
+        printf("Nenhum número foi digitado.\n");
+    }
+
+    return 0;
+}
