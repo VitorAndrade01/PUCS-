@@ -1,0 +1,41 @@
+A)  Executar 10 vezes:
+
+for (int i = 0; i < 10; i++) {
+    int A, B;
+    printf("Digite A e B: ");
+    scanf("%d %d", &A, &B);
+    printf("Módulo = %d\n", A % B);
+}
+
+B) Não executar nenhuma vez:
+
+int i = 0;
+while (i < 0) { // condição falsa desde o início
+    int A, B;
+    scanf("%d %d", &A, &B);
+    printf("Módulo = %d\n", A % B);
+}
+
+
+C) Executar 100 vezes utilizando duas estruturas (2 loops de 50):
+
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 50; j++) {
+        int A, B;
+        scanf("%d %d", &A, &B);
+        printf("Módulo = %d\n", A % B);
+    }
+}
+
+
+D)  Executar N vezes (entrada do usuário):
+
+int N;
+printf("Quantas vezes deseja executar? ");
+scanf("%d", &N);
+
+for (int i = 0; i < N; i++) {
+    int A, B;
+    scanf("%d %d", &A, &B);
+    printf("Módulo = %d\n", A % B);
+}
