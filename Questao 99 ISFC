@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int qtd;
+    float salario, soma = 0, maior = 0, menor = 0;
+    char nome[100], nomeMaior[100], nomeMenor[100];
+
+    printf("Digite a quantidade de funcionários: ");
+    scanf("%d", &qtd);
+
+    for (int i = 1; i <= qtd; i++) {
+        printf("Funcionário %d - Nome: ", i);
+        scanf(" %[^\n]", nome); // lê até o enter
+        printf("Salário: ");
+        scanf("%f", &salario);
+
+        soma += salario;
+
+        if (i == 1 || salario > maior) {
+            maior = salario;
+            strcpy(nomeMaior, nome);
+        }
+
+        if (i == 1 || salario < menor) {
+            menor = salario;
+            strcpy(nomeMenor, nome);
+        }
+    }
+
+    printf("\nMédia salarial: %.2f\n", soma / qtd);
+    printf("Maior salário: %.2f (%s)\n", maior, nomeMaior);
+    printf("Menor salário: %.2f (%s)\n", menor, nomeMenor);
+
+    return 0;
+}
