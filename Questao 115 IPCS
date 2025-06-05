@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nome[50];
+    float salario, soma = 0, maior = 0, menor = 0;
+    int count = 0;
+
+    while (1) {
+        printf("Nome do funcionário: ");
+        scanf(" %[^\n]", nome);
+        if (strcmp(nome, "fim") == 0) break;
+
+        printf("Salário: ");
+        scanf("%f", &salario);
+
+        soma += salario;
+        if (count == 0 || salario > maior) maior = salario;
+        if (count == 0 || salario < menor) menor = salario;
+
+        count++;
+    }
+
+    if (count > 0) {
+        printf("Média salarial: %.2f\n", soma / count);
+        printf("Maior salário: %.2f\n", maior);
+        printf("Menor salário: %.2f\n", menor);
+    } else {
+        printf("Nenhum dado registrado.\n");
+    }
+
+    return 0;
+}
