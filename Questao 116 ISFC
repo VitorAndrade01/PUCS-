@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    float num;
+    int divisoes = 0;
+
+    printf("Digite um número: ");
+    scanf("%f", &num);
+
+    while (num >= 1) {
+        num /= 2;
+        divisoes++;
+    }
+
+    printf("Resultado final: %.5f\n", num);
+    printf("Quantidade de divisões: %d\n", divisoes);
+    return 0;
+}
