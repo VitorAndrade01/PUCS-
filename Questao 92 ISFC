@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    double A = 0.0;
+
+    printf("Digite um número inteiro positivo N: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        if (i % 2 == 0)
+            A -= 1.0 / i;
+        else
+            A += 1.0 / i;
+    }
+
+    printf("O valor de A é: %.6f\n", A);
+
+    return 0;
+}
