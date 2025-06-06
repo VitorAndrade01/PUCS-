@@ -1,0 +1,35 @@
+25. Faça um algoritmo que leia dois números inteiros (Int1 e Int2) e imprima o
+quociente e o resto da divisão inteira de Int1 por Int2. 
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    int Int1, Int2, quociente, resto;
+
+    // Leitura dos valores de Int1 e Int2
+    printf("Digite o valor de Int1: ");
+    scanf("%d", &Int1);
+    printf("Digite o valor de Int2: ");
+    scanf("%d", &Int2);
+
+    // Verifica se o divisor é diferente de zero para evitar divisão por zero
+    if (Int2 != 0) {
+        // Cálculo do quociente e do resto
+        quociente = Int1 / Int2;
+        resto = Int1 % Int2;
+
+        // Apresenta o quociente e o resto
+        printf("O quociente da divisão de %d por %d é: %d\n", Int1, Int2, quociente);
+        printf("O resto da divisão de %d por %d é: %d\n", Int1, Int2, resto);
+    } else {
+        // Caso o divisor seja zero, exibe uma mensagem de erro
+        printf("Erro: Não é possível dividir por zero.\n");
+    }
+
+    return 0;
+}
