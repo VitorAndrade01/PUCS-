@@ -1,0 +1,31 @@
+
+29. Admitindo que uma data é lida pelo algoritmo em uma variável inteira, e não em
+uma variável do tipo data, crie um algoritmo que leia uma data no formato
+DDMMAA e imprima essa data no formato AAMMDD, onde:
+• A letra D corresponde a dois algarismos representando o dia;
+• A letra M corresponde a dois algarismos representando o mês;
+• A letra A corresponde aos dois últimos algarismos representando o ano. 
+
+
+
+
+#include <stdio.h>
+
+int main() {
+
+    int data, dia, mes, ano;
+
+ 
+    printf("Digite a data no formato DDMMAA (exemplo: 010223): ");
+    scanf("%d", &data);
+
+   
+    dia = data / 10000;        // Extrai os dois primeiros dígitos para o dia
+    mes = (data / 100) % 100;  // Extrai os dois próximos dígitos para o mês
+    ano = data % 100;          // Extrai os dois últimos dígitos para o ano
+
+   
+    printf("Data no formato AAMMDD: %02d%02d%02d\n", ano, mes, dia);
+
+    return 0;
+}
