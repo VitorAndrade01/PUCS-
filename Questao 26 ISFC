@@ -1,0 +1,30 @@
+
+26. Considere a seguinte situação: descontam-se inicialmente 10% do salário bruto
+do trabalhador como contribuição à previdência social. Após esse desconto, há
+um outro desconto de 5% sobre o valor restante do salário bruto, a título de um
+determinado imposto. Faça um algoritmo que leia o salário bruto de um cidadão e
+imprima o seu salário líquido. 
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    
+    float salario_bruto, salario_restante, salario_liquido;
+    float desconto_previdencia = 0.10, desconto_imposto = 0.05;
+
+
+    printf("Digite o salário bruto do trabalhador: ");
+    scanf("%f", &salario_bruto);
+
+    salario_restante = salario_bruto - (salario_bruto * desconto_previdencia);
+
+    salario_liquido = salario_restante - (salario_restante * desconto_imposto);
+
+ 
+    printf("O salário líquido após os descontos é: %.2f\n", salario_liquido);
+
+    return 0;
+}
