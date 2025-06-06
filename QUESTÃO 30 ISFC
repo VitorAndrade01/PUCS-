@@ -1,0 +1,33 @@
+30. Suponha que uma escola utilize, como código de matrícula, um número inteiro
+no formato AASDDD, onde:
+• Os dois primeiros dígitos, representados pela letra A, são os dois últimos
+algarismos do ano da matrícula;
+• O terceiro dígito, representado pela letra S, vale 1 ou 2, conforme o aluno
+tenha se matriculado no 1º ou 2º semestre;
+• Os quatro últimos dígitos, representados pela letra D, correspondem à ordem
+da matrícula do aluno, no semestre e no ano em questão.
+Crie um algoritmo que leia o número de matrícula de um aluno e imprima o ano
+e o semestre em que ele foi matriculado. 
+
+
+
+#include <stdio.h>
+
+int main() {
+
+    int matricula, ano, semestre;
+
+
+    printf("Digite o código de matrícula (formato AASDDD): ");
+    scanf("%d", &matricula);
+
+
+    ano = 2000 + matricula / 10000;  // Os dois primeiros dígitos representam o ano
+    semestre = (matricula / 1000) % 10;  // O terceiro dígito é o semestre
+
+
+    printf("Ano de matrícula: %d\n", ano);
+    printf("Semestre: %d\n", semestre);
+
+    return 0;
+}
