@@ -1,0 +1,49 @@
+11. Faça um algoritmo que:
+a) Obtenha o valor para a variável HT (horas trabalhadas no mês);
+b) Obtenha o valor para a variável VH (valor hora trabalhada):
+c) Obtenha o valor para a variável PD (percentual de desconto);
+d) Calcule o salário bruto => SB = HT * VH;
+e) Calcule o total de desconto => TD = (PD/100)*SB;
+f) Calcule o salário líquido => SL = SB – TD;
+g) Apresente os valores de: Horas trabalhadas, Salário Bruto, Desconto, Salário
+Liquido. 
+
+
+
+
+#include <stdio.h>
+
+int main() {
+  
+    float HT, VH, PD, SB, TD, SL;
+
+ 
+    printf("Digite o valor das horas trabalhadas no mês (HT): ");
+    scanf("%f", &HT);
+
+
+    printf("Digite o valor da hora trabalhada (VH): ");
+    scanf("%f", &VH);
+
+
+    printf("Digite o percentual de desconto (PD): ");
+    scanf("%f", &PD);
+
+
+    SB = HT * VH;
+
+  
+    TD = (PD / 100) * SB;
+
+
+    SL = SB - TD;
+
+    // Apresentar os valores
+    printf("\nValores Calculados:\n");
+    printf("Horas trabalhadas: %.2f\n", HT);
+    printf("Salário Bruto: %.2f\n", SB);
+    printf("Desconto: %.2f\n", TD);
+    printf("Salário Líquido: %.2f\n", SL);
+
+    return 0;
+}
