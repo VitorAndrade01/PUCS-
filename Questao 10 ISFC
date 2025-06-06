@@ -1,0 +1,30 @@
+10. Faça um algoritmo que:
+a) Leia um número inteiro;
+b) Leia um segundo número inteiro;
+c) Efetue a adição dos dois valores;
+d) Apresente o valor calculado. 
+
+
+
+#include <stdio.h>
+
+int main() {
+    
+    int numero1, numero2, resultado;
+
+   
+    printf("Digite o primeiro número inteiro: ");
+    scanf("%d", &numero1);
+
+    
+    printf("Digite o segundo número inteiro: ");
+    scanf("%d", &numero2);
+
+   
+    resultado = numero1 + numero2;
+
+    
+    printf("A soma dos dois números é: %d\n", resultado);
+
+    return 0;
+}
