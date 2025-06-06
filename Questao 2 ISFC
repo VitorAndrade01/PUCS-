@@ -1,0 +1,133 @@
+2. Escreva em pseudocódigo, as seguintes expressões matemáticas:
+a) (A + B)*C
+b) TOTAL / N
+c) A - B(C + D2
+) / E
+d) baseexpoente
+e ) a * bc
+ 
+
+a) #include <stdio.h>
+
+int main() {
+    float A, B, C, resultado;
+
+    printf("Digite o valor de A: ");
+    scanf("%f", &A);
+    
+    printf("Digite o valor de B: ");
+    scanf("%f", &B);
+    
+    printf("Digite o valor de C: ");
+    scanf("%f", &C);
+
+   
+    resultado = (A + B) * C;
+
+   
+    printf("Resultado de (A + B) * C = %.2f\n", resultado);
+
+    return 0;
+}
+
+
+b)#include <stdio.h>
+
+int main() {
+    float TOTAL, N, resultado;
+
+    
+    printf("Digite o valor de TOTAL: ");
+    scanf("%f", &TOTAL);
+
+    printf("Digite o valor de N: ");
+    scanf("%f", &N);
+
+    
+    resultado = TOTAL / N;
+
+   
+    printf("Resultado de TOTAL / N = %.2f\n", resultado);
+
+    return 0;
+}
+
+
+c)#include <stdio.h>
+
+int main() {
+    float A, B, C, D, E, resultado;
+
+    printf("Digite o valor de A: ");
+    scanf("%f", &A);
+
+    printf("Digite o valor de B: ");
+    scanf("%f", &B);
+
+    printf("Digite o valor de C: ");
+    scanf("%f", &C);
+
+    printf("Digite o valor de D: ");
+    scanf("%f", &D);
+
+    printf("Digite o valor de E: ");
+    scanf("%f", &E);
+
+
+    resultado = A - (B * (C + D * D)) / E;
+
+    printf("Resultado de A - B(C + D²) / E = %.2f\n", resultado);
+
+    return 0;
+}
+
+
+
+d)#include <stdio.h>
+#include <math.h> // Necessária para a função pow()
+
+int main() {
+    float base, expoente, resultado;
+
+
+    printf("Digite o valor da base: ");
+    scanf("%f", &base);
+
+    printf("Digite o valor do expoente: ");
+    scanf("%f", &expoente);
+
+    
+    resultado = pow(base, expoente);
+
+    
+    printf("Resultado de base^expoente = %.2f\n", resultado);
+
+    return 0;
+}
+
+
+
+
+e) #include <stdio.h>
+#include <math.h> // Para a função pow()
+
+int main() {
+    float a, b, c, resultado;
+
+    printf("Digite o valor de a: ");
+    scanf("%f", &a);
+
+    printf("Digite o valor de b: ");
+    scanf("%f", &b);
+
+    printf("Digite o valor de c (expoente): ");
+    scanf("%f", &c);
+
+   
+    resultado = a * pow(b, c);
+
+
+    printf("Resultado de a * b^c = %.2f\n", resultado);
+
+    return 0;
+}
