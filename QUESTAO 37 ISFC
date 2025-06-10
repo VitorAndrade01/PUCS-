@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int anos, meses, dias, total_dias;
+
+    // Leitura da idade da pessoa em anos, meses e dias
+    printf("Digite sua idade em anos: ");
+    scanf("%d", &anos);
+
+    printf("Digite os meses além dos anos completos: ");
+    scanf("%d", &meses);
+
+    printf("Digite os dias além dos meses completos: ");
+    scanf("%d", &dias);
+
+    // Cálculo do total de dias vividos (considerando 1 mês = 30 dias)
+    total_dias = (anos * 12 * 30) + (meses * 30) + dias;
+
+    // Exibição do resultado
+    printf("Você já viveu aproximadamente %d dias.\n", total_dias);
+
+    return 0;
+}
