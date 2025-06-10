@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+int main() {
+    char nome[100], categoria;
+    float salario, salario_reajustado;
+
+    // Leitura do nome, categoria e salário do empregado
+    printf("Digite o nome do empregado: ");
+    fgets(nome, sizeof(nome), stdin);
+
+    printf("Digite a categoria do empregado (A, B, C, ...): ");
+    scanf("%c", &categoria);  // Leitura da categoria (um único caractere)
+
+    printf("Digite o salário do empregado: R$ ");
+    scanf("%f", &salario);
+
+    // Cálculo do salário reajustado com base na categoria
+    switch (categoria) {
+        case 'A':
+        case 'C':
+        case 'F':
+        case 'H':
+            salario_reajustado = salario * 1.10;  // Aumento de 10%
+            break;
+        case 'B':
+        case 'D':
+        case 'E':
+        case 'I':
+        case 'J':
+        case 'T':
+            salario_reajustado = salario * 1.15;  // Aumento de 15%
+            break;
+        case 'K':
+        case 'R':
+            salario_reajustado = salario * 1.25;  // Aumento de 25%
+            break;
+        case 'L':
+        case 'M':
+        case 'N':
+        case 'O':
+        case 'P':
+        case 'Q':
+        case 'S':
+            salario_reajustado = salario * 1.35;  // Aumento de 35%
+            break;
+        case 'U':
+        case 'V':
+        case 'X':
+        case 'Y':
+        case 'W':
+        case 'Z':
+            salario_reajustado = salario * 1.50;  // Aumento de 50%
+            break;
+        default:
+            printf("Categoria inválida.\n");
+            return 1;  // Encerra o programa com erro
+    }
+
+    // Exibição do resultado
+    printf("\n--- Detalhes do Empregado ---\n");
+    printf("Nome: %s", nome);
+    printf("Categoria: %c\n", categoria);
+    printf("Salário reajustado: R$ %.2f\n", salario_reajustado);
+
+    return 0;
+}
