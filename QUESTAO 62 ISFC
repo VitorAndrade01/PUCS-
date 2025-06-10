@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    float saldo_medio, credito;
+
+    // Leitura do saldo médio
+    printf("Digite o saldo médio do cliente: R$ ");
+    scanf("%f", &saldo_medio);
+
+    // Cálculo do crédito com base no saldo médio
+    if (saldo_medio >= 0 && saldo_medio <= 200) {
+        credito = 0; // Nenhum crédito
+        printf("Saldo médio: R$ %.2f\n", saldo_medio);
+        printf("Nenhum crédito concedido.\n");
+    } else if (saldo_medio >= 201 && saldo_medio <= 400) {
+        credito = saldo_medio * 0.20; // 20% do valor do saldo médio
+        printf("Saldo médio: R$ %.2f\n", saldo_medio);
+        printf("Crédito concedido: R$ %.2f\n", credito);
+    } else if (saldo_medio >= 401 && saldo_medio <= 600) {
+        credito = saldo_medio * 0.30; // 30% do valor do saldo médio
+        printf("Saldo médio: R$ %.2f\n", saldo_medio);
+        printf("Crédito concedido: R$ %.2f\n", credito);
+    } else if (saldo_medio > 600) {
+        credito = saldo_medio * 0.40; // 40% do valor do saldo médio
+        printf("Saldo médio: R$ %.2f\n", saldo_medio);
+        printf("Crédito concedido: R$ %.2f\n", credito);
+    } else {
+        printf("Valor de saldo médio inválido.\n");
+    }
+
+    return 0;
+}
