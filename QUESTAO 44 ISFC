@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int qtd_picolé_tipo1, qtd_picolé_tipo2, qtd_picolé_tipo3;
+    float preco_tipo1 = 0.50, preco_tipo2 = 0.60, preco_tipo3 = 0.75;
+    float total_arrecadado_tipo1, total_arrecadado_tipo2, total_arrecadado_tipo3;
+    float total_arrecadado;
+
+    // Leitura da quantidade vendida de cada tipo de picolé
+    printf("Digite a quantidade vendida do picolé tipo 1: ");
+    scanf("%d", &qtd_picolé_tipo1);
+
+    printf("Digite a quantidade vendida do picolé tipo 2: ");
+    scanf("%d", &qtd_picolé_tipo2);
+
+    printf("Digite a quantidade vendida do picolé tipo 3: ");
+    scanf("%d", &qtd_picolé_tipo3);
+
+    // Cálculo do total arrecadado para cada tipo de picolé
+    total_arrecadado_tipo1 = qtd_picolé_tipo1 * preco_tipo1;
+    total_arrecadado_tipo2 = qtd_picolé_tipo2 * preco_tipo2;
+    total_arrecadado_tipo3 = qtd_picolé_tipo3 * preco_tipo3;
+
+    // Cálculo do total arrecadado geral
+    total_arrecadado = total_arrecadado_tipo1 + total_arrecadado_tipo2 + total_arrecadado_tipo3;
+
+    // Exibição do resultado
+    printf("\n--- Relatório de Vendas ---\n");
+    printf("Picolé Tipo 1: %d unidades | Total arrecadado: R$ %.2f\n", qtd_picolé_tipo1, total_arrecadado_tipo1);
+    printf("Picolé Tipo 2: %d unidades | Total arrecadado: R$ %.2f\n", qtd_picolé_tipo2, total_arrecadado_tipo2);
+    printf("Picolé Tipo 3: %d unidades | Total arrecadado: R$ %.2f\n", qtd_picolé_tipo3, total_arrecadado_tipo3);
+    printf("Total arrecadado: R$ %.2f\n", total_arrecadado);
+
+    return 0;
+}
