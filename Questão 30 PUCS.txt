@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    // Laço para gerar números de 100 a 200
+    for (int i = 101; i < 200; i += 2) {
+        printf("%d ", i);  // Exibe o número ímpar
+    }
+
+    printf("\n");  // Quebra de linha para organização da saída
+    return 0;
+}

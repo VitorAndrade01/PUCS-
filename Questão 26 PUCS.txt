@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    // Laço para gerar os números de 1000 a 1999
+    for (int i = 1000; i <= 1999; i++) {
+        // Verifica se o número dividido por 11 tem resto 5
+        if (i % 11 == 5) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+    return 0;
+}

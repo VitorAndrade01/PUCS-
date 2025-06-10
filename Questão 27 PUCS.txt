@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int valor, maiorValor, menorValor;
+    long long soma = 0;  // Usando long long para evitar overflow na soma de muitos valores
+    float media;
+
+    // Inicializando as variáveis
+    maiorValor = -1;  // O valor inicial para o maior valor deve ser o menor possível
+    menorValor = 1000000;  // O valor inicial para o menor valor deve ser um valor bem grande
+
+    // Laço para ler 500 valores
+    for (int i = 0; i < 500; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &valor);
+
+        // Verificando se o valor é positivo
+        if (valor <= 0) {
+            printf("Por favor, insira um valor positivo.\n");
+            i--; // Se o valor não for positivo, voltar uma iteração para ler novamente
+            continue;
+        }
+
+        // Acumulando a soma para o cálculo da média
+        soma += valor;
+
+        // Atualizando o maior valor
+        if (valor > maiorValor) {
+            maiorValor = valor;
+        }
+
+        // Atualizando o menor valor
+        if (valor < menorValor) {
+            menorValor = valor;
+        }
+    }
+
+    // Calculando a média
+    media = soma / 500.0;
+
+    // Exibindo os resultados
+    printf("\nMaior valor: %d\n", maiorValor);
+    printf("Menor valor: %d\n", menorValor);
+    printf("Média dos valores: %.2f\n", media);
+
+    return 0;
+}
