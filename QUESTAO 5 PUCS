@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int valor, soma = 0, contador = 0;
+    double media;
+
+    // Leitura dos valores
+    while (1) {
+        printf("Digite um valor inteiro positivo (ou um valor negativo para encerrar): ");
+        scanf("%d", &valor);
+
+        // Condição para encerrar a leitura
+        if (valor < 0) {
+            break;
+        }
+
+        // Acumulando a soma dos valores e o contador
+        soma += valor;
+        contador++;
+    }
+
+    // Verificando se algum valor foi inserido
+    if (contador > 0) {
+        // Calculando e exibindo a média
+        media = (double)soma / contador;
+        printf("A média aritmética dos valores é: %.2f\n", media);
+    } else {
+        printf("Nenhum valor positivo foi informado.\n");
+    }
+
+    return 0;
+}
