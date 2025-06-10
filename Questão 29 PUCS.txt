@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int valor, soma = 0, quantidade = 0;
+    float media;
+
+    printf("Digite números entre 13 e 73 para calcular a média. Digite um valor fora desse intervalo para encerrar.\n");
+
+    // Loop para ler os números até que um valor fora do intervalo seja digitado
+    while (1) {
+        printf("Digite um número: ");
+        scanf("%d", &valor);
+
+        // Verifica se o valor está no intervalo entre 13 e 73
+        if (valor < 13 || valor > 73) {
+            break;  // Encerra o loop se o valor não estiver entre 13 e 73
+        }
+
+        // Soma os números e conta quantos foram lidos
+        soma += valor;
+        quantidade++;
+    }
+
+    // Verifica se ao menos um valor foi lido dentro do intervalo
+    if (quantidade > 0) {
+        media = (float)soma / quantidade;  // Calcula a média
+        printf("A média aritmética dos números lidos é: %.2f\n", media);
+    } else {
+        printf("Nenhum valor válido foi lido dentro do intervalo.\n");
+    }
+
+    return 0;
+}

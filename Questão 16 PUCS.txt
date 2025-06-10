@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double valor;
+    int count = 0;
+
+    // Imprimindo o cabeçalho da tabela
+    printf("Tabela de Valores\n");
+    printf("Valor  | Quadrado | Cubo | Raiz Quadrada\n");
+    printf("--------------------------------------------\n");
+
+    // Laço para ler números indefinidamente
+    while (1) {
+        printf("Digite um valor (digite um número negativo para parar): ");
+        scanf("%lf", &valor);
+
+        // Condição de parada se o número for negativo
+        if (valor < 0) {
+            break;
+        }
+
+        // Calculando o quadrado, o cubo e a raiz quadrada
+        double quadrado = valor * valor;
+        double cubo = valor * valor * valor;
+        double raizQuadrada = sqrt(valor);
+
+        // Exibindo o valor, seu quadrado, cubo e raiz quadrada
+        printf("%6.2f  | %8.2f  | %5.2f | %14.2f\n", valor, quadrado, cubo, raizQuadrada);
+
+        // Contando as linhas para verificar quando repetir o cabeçalho
+        count++;
+
+        // Se já tiver impresso 20 linhas, imprime o cabeçalho novamente
+        if (count == 20) {
+            printf("\nTabela de Valores\n");
+            printf("Valor  | Quadrado | Cubo | Raiz Quadrada\n");
+            printf("--------------------------------------------\n");
+            count = 0;  // Reinicia o contador de linhas
+        }
+    }
+
+    return 0;
+}

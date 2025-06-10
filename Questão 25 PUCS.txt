@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int codigoProduto;
+    float precoCusto, precoNovo;
+    float somaPrecosSemAumento = 0.0, somaPrecosComAumento = 0.0;
+    int totalProdutos = 0;
+
+    // Laço para ler os dados dos produtos
+    while (1) {
+        printf("Digite o código do produto (código negativo para encerrar): ");
+        scanf("%d", &codigoProduto);
+
+        // Condição de parada
+        if (codigoProduto < 0) {
+            break;
+        }
+
+        // Leitura do preço de custo
+        printf("Digite o preço de custo do produto R$ ");
+        scanf("%f", &precoCusto);
+
+        // Calculando o novo preço com o aumento de 20%
+        precoNovo = precoCusto * 1.20;
+
+        // Acumulando os preços para cálculo da média
+        somaPrecosSemAumento += precoCusto;
+        somaPrecosComAumento += precoNovo;
+        totalProdutos++;
+
+        // Exibindo o código do produto e os preços
+        printf("Código: %d | Preço de Custo: R$ %.2f | Preço Novo: R$ %.2f\n", 
+               codigoProduto, precoCusto, precoNovo);
+    }
+
+    // Exibindo as médias
+    if (totalProdutos > 0) {
+        float mediaSemAumento = somaPrecosSemAumento / totalProdutos;
+        float mediaComAumento = somaPrecosComAumento / totalProdutos;
+
+        printf("\nMédia dos preços sem aumento: R$ %.2f\n", mediaSemAumento);
+        printf("Média dos preços com aumento: R$ %.2f\n", mediaComAumento);
+    } else {
+        printf("\nNenhum produto foi inserido.\n");
+    }
+
+    return 0;
+}

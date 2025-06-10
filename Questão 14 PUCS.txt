@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int valor;
+    int soma = 0, positivos = 0, negativos = 0, total = 0;
+
+    // Loop para ler números até o valor 0 ser digitado (condição de parada)
+    while(1) {
+        printf("Digite um número (0 para parar): ");
+        scanf("%d", &valor);
+
+        if (valor == 0) {
+            break;  // Se o número for 0, encerra o loop
+        }
+
+        // Calculando a soma e contando os números positivos e negativos
+        soma += valor;
+        total++;
+
+        if (valor > 0) {
+            positivos++;
+        } else {
+            negativos++;
+        }
+    }
+
+    // Verificando se algum valor foi inserido
+    if (total > 0) {
+        // Calculando a média aritmética
+        double media = (double)soma / total;
+
+        // Calculando os percentuais
+        double percentualPositivos = (double)positivos / total * 100;
+        double percentualNegativos = (double)negativos / total * 100;
+
+        // Exibindo os resultados
+        printf("\nResultados:\n");
+        printf("Média aritmética: %.2f\n", media);
+        printf("Quantidade de valores positivos: %d\n", positivos);
+        printf("Quantidade de valores negativos: %d\n", negativos);
+        printf("Percentual de valores positivos: %.2f%%\n", percentualPositivos);
+        printf("Percentual de valores negativos: %.2f%%\n", percentualNegativos);
+    } else {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+
+    return 0;
+}

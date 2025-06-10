@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+    int totalPares = 0, totalImpares = 0;
+    int somaPares = 0, somaTotal = 0;
+    int countTotal = 0;
+
+    // Laço para ler os números até que o número 0 seja inserido
+    while (1) {
+        printf("Digite um número positivo (digite 0 para encerrar): ");
+        scanf("%d", &numero);
+
+        // Condição de parada (quando o número for 0)
+        if (numero == 0) {
+            break;
+        }
+
+        // Verificando se o número é par ou ímpar
+        if (numero % 2 == 0) {
+            totalPares++;
+            somaPares += numero;
+        } else {
+            totalImpares++;
+        }
+
+        // Atualizando a soma total e o contador total
+        somaTotal += numero;
+        countTotal++;
+    }
+
+    // Calculando as médias
+    if (totalPares > 0) {
+        double mediaPares = (double)somaPares / totalPares;
+        printf("Média dos números pares: %.2f\n", mediaPares);
+    } else {
+        printf("Nenhum número par foi inserido.\n");
+    }
+
+    if (countTotal > 0) {
+        double mediaGeral = (double)somaTotal / countTotal;
+        printf("Média geral dos números lidos: %.2f\n", mediaGeral);
+    } else {
+        printf("Nenhum número foi inserido.\n");
+    }
+
+    // Exibindo a quantidade de números pares e ímpares
+    printf("Quantidade de números pares: %d\n", totalPares);
+    printf("Quantidade de números ímpares: %d\n", totalImpares);
+
+    return 0;
+}

@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+// Função para calcular o fatorial de um número
+int fatorial(int num) {
+    int resultado = 1;
+    for (int i = 1; i <= num; i++) {
+        resultado *= i;
+    }
+    return resultado;
+}
+
+// Função para calcular o número de divisores de um número
+int contarDivisores(int num) {
+    int count = 0;
+    for (int i = 1; i <= num; i++) {
+        if (num % i == 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int m;
+
+    // Laço para ler os valores de m
+    while (1) {
+        printf("Digite um número m (inteiro e positivo, ou um número não positivo para parar): ");
+        scanf("%d", &m);
+
+        // Condição de parada
+        if (m <= 0) {
+            break;
+        }
+
+        // Se m for par
+        if (m % 2 == 0) {
+            int divisores = contarDivisores(m);
+            printf("O número %d é par e possui %d divisores.\n", m, divisores);
+        }
+        // Se m for ímpar e menor que 10
+        else if (m < 10) {
+            int fact = fatorial(m);
+            printf("O número %d é ímpar e seu fatorial é %d.\n", m, fact);
+        }
+        // Se m for ímpar e maior ou igual a 10
+        else {
+            int soma = 0;
+            for (int i = 1; i <= m; i++) {
+                soma += i;
+            }
+            printf("O número %d é ímpar e a soma dos inteiros de 1 até %d é %d.\n", m, m, soma);
+        }
+    }
+
+    return 0;
+}

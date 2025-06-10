@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int idade, maiorIdade = -1, contadorMulheres = 0;
+    char sexo, corOlhos[20], corCabelos[20];
+
+    // Laço para ler os dados dos habitantes
+    while (1) {
+        printf("Digite a idade (digite -1 para encerrar): ");
+        scanf("%d", &idade);
+
+        // Condição de parada
+        if (idade == -1) {
+            break;
+        }
+
+        // Leitura dos outros dados
+        printf("Digite o sexo (M/F): ");
+        scanf(" %c", &sexo);  // O espaço antes do %c é para consumir o caractere de nova linha (\n)
+
+        printf("Digite a cor dos olhos (azuis, verdes, castanhos): ");
+        scanf("%s", corOlhos);
+
+        printf("Digite a cor dos cabelos (louros, castanhos, pretos): ");
+        scanf("%s", corCabelos);
+
+        // Atualizando a maior idade
+        if (idade > maiorIdade) {
+            maiorIdade = idade;
+        }
+
+        // Verificando se a pessoa é mulher, tem idade entre 18 e 35 anos, olhos verdes e cabelos louros
+        if ((sexo == 'F' || sexo == 'f') && idade >= 18 && idade <= 35) {
+            if (strcmp(corOlhos, "verdes") == 0 && strcmp(corCabelos, "louros") == 0) {
+                contadorMulheres++;
+            }
+        }
+    }
+
+    // Exibindo os resultados
+    if (maiorIdade != -1) {
+        printf("\nA maior idade dos habitantes é: %d\n", maiorIdade);
+        printf("A quantidade de mulheres entre 18 e 35 anos, com olhos verdes e cabelos louros é: %d\n", contadorMulheres);
+    } else {
+        printf("\nNenhum dado foi inserido.\n");
+    }
+
+    return 0;
+}

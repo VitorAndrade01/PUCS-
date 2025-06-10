@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int m, n;
+
+    // Laço para ler pares de valores m e n
+    while(1) {
+        printf("Digite os valores de m e n (m e n positivos, digite m <= 0 ou n <= 0 para parar): ");
+        scanf("%d %d", &m, &n);
+
+        // Condição de parada: se m ou n forem menores ou iguais a zero, o programa encerra
+        if (m <= 0 || n <= 0) {
+            break;
+        }
+
+        // Calculando a soma dos n inteiros consecutivos a partir de m
+        int soma = 0;
+        for (int i = 0; i < n; i++) {
+            soma += (m + i);
+        }
+
+        // Exibindo o resultado
+        printf("A soma dos %d inteiros consecutivos a partir de %d é: %d\n", n, m, soma);
+    }
+
+    return 0;
+}

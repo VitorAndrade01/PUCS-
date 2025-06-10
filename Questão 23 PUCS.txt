@@ -1,66 +1,82 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char sexo;           // 'M' ou 'F' para masculino ou feminino
-    char corOlhos;       // 'A' para azul, 'V' para verde, 'C' para castanho
-    char corCabelos;     // 'L' para louros, 'C' para castanhos, 'P' para pretos
     int idade;
-    
-    int maiorIdade = 0;
-    int contMulheresCondicao = 0;
+    char sexo, corOlhos[20], corCabelos[20];
+    int totalMasculino = 0, totalFeminino = 0;
+    int totalAzul = 0, totalVerde = 0, totalCastanhoOlhos = 0;
+    int totalLouros = 0, totalCastanhos = 0, totalPretos = 0;
+    int somaIdades = 0, totalPessoas = 0;
 
-    // Leitura da idade
-    printf("Idade: ");
-    scanf("%d", &idade);
-
-    // Leitura dos habitantes
-    while (idade != -1) {
-        printf("\n--- Novo Habitante ---\n");
-
-        // Leitura do sexo
-        printf("Sexo (M para masculino, F para feminino): ");
-        scanf(" %c", &sexo);  // Espaço antes do %c para limpar o buffer
-
-        // Leitura da cor dos olhos
-        printf("Cor dos olhos (A para azul, V para verde, C para castanho): ");
-        scanf(" %c", &corOlhos);
-
-        // Leitura da cor dos cabelos
-        printf("Cor dos cabelos (L para louros, C para castanhos, P para pretos): ");
-        scanf(" %c", &corCabelos);
-
-        // Leitura da idade
-        printf("Idade: ");
+    // Laço enquanto-faça para coletar dados
+    while (1) {
+        printf("Digite a idade (negativa para encerrar): ");
         scanf("%d", &idade);
 
-        // Verifica a maior idade
-        if (idade > maiorIdade) {
-            maiorIdade = idade;
+        // Condição de parada
+        if (idade < 0) {
+            break;
         }
 
-        // Verifica se a pessoa é mulher (sexo feminino), idade entre 18 e 35
-        // e se tem olhos verdes e cabelos louros
-        if ((sexo == 'F' || sexo == 'f') && idade >= 18 && idade <= 35) {
-            if (corOlhos == 'V' || corOlhos == 'v') {  // Olhos verdes
-                if (corCabelos == 'L' || corCabelos == 'l') {  // Cabelos louros
-                    contMulheresCondicao++;
-                }
-            }
+        // Leitura dos outros dados
+        printf("Digite o sexo (M/F): ");
+        scanf(" %c", &sexo);  // O espaço antes do %c é para consumir o caractere de nova linha (\n)
+
+        printf("Digite a cor dos olhos (azuis, verdes, castanhos): ");
+        scanf("%s", corOlhos);
+
+        printf("Digite a cor dos cabelos (louros, castanhos, pretos): ");
+        scanf("%s", corCabelos);
+
+        // Acumulando dados para os cálculos
+        somaIdades += idade;
+        totalPessoas++;
+
+        if (sexo == 'M' || sexo == 'm') {
+            totalMasculino++;
+        } else if (sexo == 'F' || sexo == 'f') {
+            totalFeminino++;
+        }
+
+        // Contando as cores dos olhos
+        if (strcmp(corOlhos, "azuis") == 0) {
+            totalAzul++;
+        } else if (strcmp(corOlhos, "verdes") == 0) {
+            totalVerde++;
+        } else if (strcmp(corOlhos, "castanhos") == 0) {
+            totalCastanhoOlhos++;
+        }
+
+        // Contando as cores dos cabelos
+        if (strcmp(corCabelos, "louros") == 0) {
+            totalLouros++;
+        } else if (strcmp(corCabelos, "castanhos") == 0) {
+            totalCastanhos++;
+        } else if (strcmp(corCabelos, "pretos") == 0) {
+            totalPretos++;
         }
     }
 
-    // Resultado final
-    printf("\n--- Resultados da Pesquisa ---\n");
-    printf("Maior idade dos habitantes: %d anos\n", maiorIdade);
-    printf("Quantidade de mulheres entre 18 e 35 anos com olhos verdes e cabelos louros: %d\n", contMulheresCondicao);
+    // Exibindo os resultados
+    if (totalPessoas > 0) {
+        float mediaIdade = (float)somaIdades / totalPessoas;
+        printf("\nMédia de idade da população: %.2f\n", mediaIdade);
+        printf("Quantidade de homens: %d\n", totalMasculino);
+        printf("Quantidade de mulheres: %d\n", totalFeminino);
+
+        printf("\nDistribuição das cores dos olhos:\n");
+        printf("Azuis: %d\n", totalAzul);
+        printf("Verdes: %d\n", totalVerde);
+        printf("Castanhos: %d\n", totalCastanhoOlhos);
+
+        printf("\nDistribuição das cores dos cabelos:\n");
+        printf("Louros: %d\n", totalLouros);
+        printf("Castanhos: %d\n", totalCastanhos);
+        printf("Pretos: %d\n", totalPretos);
+    } else {
+        printf("\nNenhum dado foi inserido.\n");
+    }
 
     return 0;
 }
-
-RESULTADO:Idade: 18
-
---- Novo Habitante ---
-Sexo (M para masculino, F para feminino): M
-Cor dos olhos (A para azul, V para verde, C para castanho): C
-Cor dos cabelos (L para louros, C para castanhos, P para pretos): C
-Idade: 18

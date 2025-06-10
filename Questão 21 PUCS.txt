@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+    long long produtório = 1;  // Usando long long para suportar números grandes
+
+    // Laço para ler os números até que o número 0 seja inserido
+    while (1) {
+        printf("Digite um número inteiro positivo (digite 0 para encerrar): ");
+        scanf("%d", &numero);
+
+        // Condição de parada (quando o número for 0)
+        if (numero == 0) {
+            break;
+        }
+
+        // Verificando se o número é par
+        if (numero > 0 && numero % 2 == 0) {
+            produtório *= numero;
+        }
+    }
+
+    // Exibindo o produtório dos números pares
+    if (produtório == 1) {
+        printf("Não foi calculado o produtório de números pares.\n");
+    } else {
+        printf("O produtório dos números pares é: %lld\n", produtório);
+    }
+
+    return 0;
+}

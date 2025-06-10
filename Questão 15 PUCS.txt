@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    int intervalo1 = 0, intervalo2 = 0, intervalo3 = 0, intervalo4 = 0;
+
+    // Laço para ler números até um número negativo ser digitado
+    while(1) {
+        printf("Digite um número (número negativo para parar): ");
+        scanf("%d", &num);
+
+        // Condição de parada, se o número for negativo
+        if (num < 0) {
+            break;
+        }
+
+        // Contagem dos números em cada intervalo
+        if (num >= 0 && num <= 25) {
+            intervalo1++;
+        } else if (num >= 26 && num <= 50) {
+            intervalo2++;
+        } else if (num >= 51 && num <= 75) {
+            intervalo3++;
+        } else if (num >= 76 && num <= 100) {
+            intervalo4++;
+        }
+    }
+
+    // Exibindo os resultados
+    printf("\nResultados:\n");
+    printf("Intervalo [0, 25]: %d números\n", intervalo1);
+    printf("Intervalo [26, 50]: %d números\n", intervalo2);
+    printf("Intervalo [51, 75]: %d números\n", intervalo3);
+    printf("Intervalo [76, 100]: %d números\n", intervalo4);
+
+    return 0;
+}
