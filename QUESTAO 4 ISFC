@@ -1,0 +1,11 @@
+4. Coloque VERDADEIRO ou FALSO na avaliação das seguintes expressões:
+a) 6 <= 7 b) (64) ^ (1/2) > (5)*2
+c) 'Pseudocódigo' < 'PSEUDOCÓDIGO' d) 'Pseudocódigo' > 'turbo'
+e) 3 + 5 <= 2 * 4 
+
+
+A) 6 <= 7 = Verdadeiro
+B) (64) ^ (1/2) > (5)*2  = Verdadeiro
+c) 'Pseudocódigo' < 'PSEUDOCÓDIGO' = Falso
+d) 'Pseudocódigo' > 'turbo' = Falso
+e) 3 + 5 <= 2 * 4 = Verdadeiro
