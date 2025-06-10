@@ -1,0 +1,26 @@
+
+19. Faça um algoritmo que leia um valor inteiro e apresente os resultados do
+quadrado e do cubo do valor lido. 
+
+
+
+#include <stdio.h>
+
+int main() {
+ 
+    int valor;
+
+    
+    printf("Digite um valor inteiro: ");
+    scanf("%d", &valor);
+
+   
+    int quadrado = valor * valor;
+    int cubo = valor * valor * valor;
+
+ 
+    printf("O quadrado de %d é: %d\n", valor, quadrado);
+    printf("O cubo de %d é: %d\n", valor, cubo);
+
+    return 0;
+}
