@@ -1,0 +1,22 @@
+3. Considerando as variáveis declaradas na tabela abaixo e mais a variável
+booleana TESTE, com valor FALSO, avalie as expressões a seguir, para cada
+uma das três combinações de valores apresentadas: 
+
+
+
+
+Expressão	
+
+a)true || false	 
+b)true && false
+c)false || (false && true) → false || false   
+d)!0 && (true || !false) → true && (true || true) → true && true
+e)!(true && false) → !false
+
+
+ Linha 01	    Linha 02	  Linha 03
+a)✅ true	    ✅ true	  ✅ true
+b)❌ false	  ❌ false	  ❌ false
+c)✅ true	    ✅ true	  ❌ false
+d)✅ true   	❌ false	  ✅ true
+e)✅ true    	✅ true	  ✅ true
