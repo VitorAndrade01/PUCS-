@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    int codigo, quantidade;
+    float preco, total;
+
+    // Leitura do código do item e da quantidade
+    printf("Digite o código do item (100 a 105): ");
+    scanf("%d", &codigo);
+    printf("Digite a quantidade: ");
+    scanf("%d", &quantidade);
+
+    // Determinando o preço unitário de acordo com o código
+    switch (codigo) {
+        case 100: // Cachorro quente
+            preco = 1.10;
+            break;
+        case 101: // Bauru simples
+            preco = 1.30;
+            break;
+        case 102: // Bauru c/ ovo
+            preco = 1.50;
+            break;
+        case 103: // Hamburger
+            preco = 1.10;
+            break;
+        case 104: // Cheeseburger
+            preco = 1.30;
+            break;
+        case 105: // Refrigerante
+            preco = 1.00;
+            break;
+        default:
+            printf("Código inválido!\n");
+            return 1; // Sai do programa se o código for inválido
+    }
+
+    // Calculando o valor total
+    total = preco * quantidade;
+
+    // Exibindo o valor a ser pago
+    printf("Valor a ser pago: R$ %.2f\n", total);
+
+    return 0;
+}
