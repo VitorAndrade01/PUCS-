@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main() {
+    int dia, mes, signo;
+
+    // Leitura da data de nascimento
+    printf("Digite o dia do seu aniversário (1-31): ");
+    scanf("%d", &dia);
+    printf("Digite o mês do seu aniversário (1-12): ");
+    scanf("%d", &mes);
+
+    // Determinando o signo com base na data
+    if ((mes == 1 && dia >= 21) || (mes == 2 && dia <= 19)) {
+        signo = 1; // Aquário
+    } else if ((mes == 2 && dia >= 20) || (mes == 3 && dia <= 20)) {
+        signo = 2; // Peixes
+    } else if ((mes == 3 && dia >= 21) || (mes == 4 && dia <= 20)) {
+        signo = 3; // Áries
+    } else if ((mes == 4 && dia >= 21) || (mes == 5 && dia <= 20)) {
+        signo = 4; // Touro
+    } else if ((mes == 5 && dia >= 21) || (mes == 6 && dia <= 20)) {
+        signo = 5; // Gêmeos
+    } else if ((mes == 6 && dia >= 21) || (mes == 7 && dia <= 21)) {
+        signo = 6; // Câncer
+    } else if ((mes == 7 && dia >= 22) || (mes == 8 && dia <= 22)) {
+        signo = 7; // Leão
+    } else if ((mes == 8 && dia >= 23) || (mes == 9 && dia <= 22)) {
+        signo = 8; // Virgem
+    } else if ((mes == 9 && dia >= 23) || (mes == 10 && dia <= 22)) {
+        signo = 9; // Libra
+    } else if ((mes == 10 && dia >= 23) || (mes == 11 && dia <= 21)) {
+        signo = 10; // Escorpião
+    } else if ((mes == 11 && dia >= 22) || (mes == 12 && dia <= 21)) {
+        signo = 11; // Sagitário
+    } else {
+        signo = 12; // Capricórnio
+    }
+
+    // Exibindo o signo do usuário
+    switch (signo) {
+        case 1: printf("Seu signo é Aquário.\n"); break;
+        case 2: printf("Seu signo é Peixes.\n"); break;
+        case 3: printf("Seu signo é Áries.\n"); break;
+        case 4: printf("Seu signo é Touro.\n"); break;
+        case 5: printf("Seu signo é Gêmeos.\n"); break;
+        case 6: printf("Seu signo é Câncer.\n"); break;
+        case 7: printf("Seu signo é Leão.\n"); break;
+        case 8: printf("Seu signo é Virgem.\n"); break;
+        case 9: printf("Seu signo é Libra.\n"); break;
+        case 10: printf("Seu signo é Escorpião.\n"); break;
+        case 11: printf("Seu signo é Sagitário.\n"); break;
+        case 12: printf("Seu signo é Capricórnio.\n"); break;
+    }
+
+    return 0;
+}
