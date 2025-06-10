@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+    // Solicita o número de termos (n) da soma
+    printf("Digite um número inteiro e positivo (n): ");
+    scanf("%d", &n);
+
+    // Verifica se o número é positivo
+    if (n <= 0) {
+        printf("Por favor, digite um número positivo.\n");
+        return 1;  // Encerra o programa se n não for positivo
+    }
+
+    // Calcula a soma H = 10 * n
+    int H = 10 * n;
+
+    // Exibe o resultado da soma
+    printf("Resultado da soma H = %d\n", H);
+
+    return 0;
+}

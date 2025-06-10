@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+#define TOTAL_CLIENTES 150
+
+int main() {
+    char nome[100];
+    float valorCompras, bonus;
+
+    for (int i = 1; i <= TOTAL_CLIENTES; i++) {
+        printf("Cliente %d:\n", i);
+
+        // Lê o nome do cliente
+        printf("Nome: ");
+        scanf(" %[^\n]", nome);  // lê linha inteira com espaços
+
+        // Lê o valor das compras
+        printf("Valor total das compras no ano passado: R$ ");
+        scanf("%f", &valorCompras);
+
+        // Calcula o bônus
+        if (valorCompras < 500000.0f) {
+            bonus = valorCompras * 0.10f;
+        } else {
+            bonus = valorCompras * 0.15f;
+        }
+
+        // Exibe o resultado
+        printf("Cliente: %s\n", nome);
+        printf("Bônus: R$ %.2f\n\n", bonus);
+    }
+
+    return 0;
+}

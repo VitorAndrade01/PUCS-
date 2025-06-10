@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    float n1, n2, n3, media, somaMedias = 0;
+    int i;
+    int alunos = 50;
+
+    for (i = 1; i <= alunos; i++) {
+        printf("Digite as 3 notas do aluno %d: ", i);
+        scanf("%f %f %f", &n1, &n2, &n3);
+
+        // Calcula a média ponderada
+        media = (n1 * 2 + n2 * 4 + n3 * 3) / 10;
+
+        // Exibe a média e a situação do aluno
+        printf("Média do aluno %d: %.2f - ", i, media);
+        if (media >= 7) {
+            printf("Aprovado\n");
+        } else {
+            printf("Reprovado\n");
+        }
+
+        // Acumula as médias para calcular a média geral
+        somaMedias += media;
+    }
+
+    // Calcula e exibe a média geral da turma
+    float mediaGeral = somaMedias / alunos;
+    printf("\nMédia geral da turma: %.2f\n", mediaGeral);
+
+    return 0;
+}

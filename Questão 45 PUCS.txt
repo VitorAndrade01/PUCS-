@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int sexo, idade;
+    float altura;
+
+    int totalPessoas = 1000;
+    int contador = 0;
+
+    int somaIdadeGrupo = 0;
+    float somaAlturaMulheres = 0;
+    int countMulheres = 0;
+
+    int somaIdadeHomens = 0;
+    int countHomens = 0;
+
+    int countEntre18e35 = 0;
+
+    do {
+        printf("Pessoa %d\n", contador + 1);
+
+        // Lê o sexo
+        do {
+            printf("Sexo (0 - feminino, 1 - masculino): ");
+            scanf("%d", &sexo);
+        } while (sexo != 0 && sexo != 1);
+
+        // Lê a idade
+        printf("Idade: ");
+        scanf("%d", &idade);
+
+        // Lê a altura
+        printf("Altura (em metros): ")

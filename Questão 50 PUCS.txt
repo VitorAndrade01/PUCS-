@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y;
+    long long resultado = 1;
+
+    // Leitura e validação dos valores
+    do {
+        printf("Digite a base (X), número inteiro e positivo: ");
+        scanf("%d", &X);
+    } while (X <= 0);
+
+    do {
+        printf("Digite o expoente (Y), número inteiro e positivo: ");
+        scanf("%d", &Y);
+    } while (Y < 0);
+
+    // Cálculo da potência X^Y
+    for (int i = 1; i <= Y; i++) {
+        resultado *= X;
+    }
+
+    // Exibe o resultado
+    printf("%d elevado a %d é: %lld\n", X, Y, resultado);
+
+    return 0;
+}

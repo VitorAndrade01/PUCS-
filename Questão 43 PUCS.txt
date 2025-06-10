@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+// Função para ordenar 4 elementos em ordem decrescente
+void ordenarDecrescente(int v[], int tamanho) {
+    int i, j, temp;
+    for (i = 0; i < tamanho - 1; i++) {
+        for (j = i + 1; j < tamanho; j++) {
+            if (v[i] < v[j]) {
+                temp = v[i];
+                v[i] = v[j];
+                v[j] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int grupo[4];
+    
+    for (int g = 1; g <= 5; g++) {
+        printf("Grupo %d\n", g);
+
+        // Leitura dos 4 valores
+        for (int i = 0; i < 4; i++) {
+            printf("Digite o valor %d: ", i + 1);
+            scanf("%d", &grupo[i]);
+        }
+
+        // Mostra os valores na ordem lida
+        printf("Valores lidos: ");
+        for (int i = 0; i < 4; i++) {
+            printf("%d ", grupo[i]);
+        }
+
+        // Ordena em ordem decrescente
+        ordenarDecrescente(grupo, 4);
+
+        // Mostra os valores ordenados
+        printf("\nValores em ordem decrescente: ");
+        for (int i = 0; i < 4; i++) {
+            printf("%d ", grupo[i]);
+        }
+
+        printf("\n\n");
+    }
+
+    return 0;
+}
