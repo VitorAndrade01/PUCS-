@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    float salario, desconto;
+
+    // Leitura do salário do funcionário
+    printf("Digite o salário do funcionário: ");
+    scanf("%f", &salario);
+
+    // Calculando o desconto (11% do salário ou 318,20, o que for menor)
+    desconto = salario * 0.11;
+
+    // Verificando se o desconto é maior que o valor máximo de R$ 318,20
+    if (desconto > 318.20) {
+        desconto = 318.20;
+    }
+
+    // Exibindo o valor do desconto
+    printf("Desconto previdenciário: R$ %.2f\n", desconto);
+
+    return 0;
+}
