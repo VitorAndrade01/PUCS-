@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    unsigned long long fatorial = 1;
+
+    // Leitura e validação do valor de N
+    do {
+        printf("Digite um número inteiro e positivo: ");
+        scanf("%d", &N);
+    } while (N < 0);
+
+    // Cálculo do fatorial
+    for (int i = 1; i <= N; i++) {
+        fatorial *= i;
+    }
+
+    // Exibição do resultado
+    printf("Fatorial de %d é %llu\n", N, fatorial);
+
+    return 0;
+}

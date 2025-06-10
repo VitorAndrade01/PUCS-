@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    int matricula;
+    float nota;
+    char conceito;
+    int i;
+
+    for (i = 1; i <= 75; i++) {
+        printf("Aluno %d:\n", i);
+
+        // Leitura do número de matrícula
+        printf("Número de matrícula: ");
+        scanf("%d", &matricula);
+
+        // Leitura da nota
+        do {
+            printf("Nota final (0.0 a 10.0): ");
+            scanf("%f", &nota);
+        } while (nota < 0.0 || nota > 10.0);
+
+        // Determina o conceito usando estrutura tipo CASO
+        switch ((int)(nota * 10)) {
+            case 90 ... 100:
+                conceito = 'A';
+                break;
+            case 70 ... 89:
+                conceito = 'B';
+                break;
+            case 50 ... 69:
+                conceito = 'C';
+                break;
+            case 0 ... 49:
+                conceito = 'D';
+                break;
+            default:
+                conceito = '?'; // Caso de erro (não deve ocorrer)
+        }
+
+        // Exibe resultado
+        printf("Matrícula: %d - Nota: %.1f - Conceito: %c\n\n", matricula, nota, conceito);
+    }
+
+    return 0;
+}
