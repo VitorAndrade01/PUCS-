@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    // Definindo as variáveis para as alturas e os incrementos anuais
+    double alturaChico = 1.50, alturaZe = 1.10;
+    int anos = 0;
+
+    // Enquanto a altura de Zé não for maior que a de Chico
+    while (alturaZe <= alturaChico) {
+        alturaChico += 0.02;  // Chico cresce 2 cm por ano
+        alturaZe += 0.03;     // Zé cresce 3 cm por ano
+        anos++;               // Incrementa o contador de anos
+    }
+
+    // Exibindo o número de anos necessários para Zé ultrapassar Chico
+    printf("Zé ultrapassa Chico após %d anos.\n", anos);
+    printf("Altura de Chico: %.2f metros\n", alturaChico);
+    printf("Altura de Zé: %.2f metros\n", alturaZe);
+
+    return 0;
+}
