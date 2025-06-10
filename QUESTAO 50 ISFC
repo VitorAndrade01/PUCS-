@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int nota;
+
+    // Leitura da nota
+    printf("Digite a nota do aluno (0 a 100): ");
+    scanf("%d", &nota);
+
+    // Verificando o conceito de acordo com a nota
+    if (nota >= 0 && nota <= 49) {
+        printf("Conceito: Insuficiente\n");
+    } else if (nota >= 50 && nota <= 64) {
+        printf("Conceito: Regular\n");
+    } else if (nota >= 65 && nota <= 84) {
+        printf("Conceito: Bom\n");
+    } else if (nota >= 85 && nota <= 100) {
+        printf("Conceito: Ótimo\n");
+    } else {
+        printf("Nota inválida! A nota deve estar entre 0 e 100.\n");
+    }
+
+    return 0;
+}
