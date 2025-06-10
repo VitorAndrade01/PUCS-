@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y, Z;
+
+    // Leitura dos três valores
+    printf("Digite o comprimento do lado X: ");
+    scanf("%d", &X);
+
+    printf("Digite o comprimento do lado Y: ");
+    scanf("%d", &Y);
+
+    printf("Digite o comprimento do lado Z: ");
+    scanf("%d", &Z);
+
+    // Verificando se os valores podem formar um triângulo
+    if (X < Y + Z && Y < X + Z && Z < X + Y) {
+        // Verificando o tipo de triângulo
+        if (X == Y && Y == Z) {
+            printf("\nO triângulo é Equilátero.\n");
+        } else if (X == Y || Y == Z || Z == X) {
+            printf("\nO triângulo é Isóscele.\n");
+        } else {
+            printf("\nO triângulo é Escaleno.\n");
+        }
+    } else {
+        printf("\nOs valores não podem formar um triângulo.\n");
+    }
+
+    return 0;
+}
