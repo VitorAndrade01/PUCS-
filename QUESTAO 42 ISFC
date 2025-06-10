@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    char nome[4][100];  // Vetor de strings para armazenar os nomes dos artigos
+    float preco[4], desconto[4], preco_com_desconto[4];
+    float total_a_pagar = 0.0;
+
+    // Leitura dos dados dos artigos
+    for (int i = 0; i < 4; i++) {
+        printf("Digite o nome do artigo %d: ", i + 1);
+        fgets(nome[i], sizeof(nome[i]), stdin);  // Lê o nome do artigo
+
+        printf("Digite o preço do artigo %d: R$ ", i + 1);
+        scanf("%f", &preco[i]);
+
+        printf("Digite o percentual de desconto do artigo %d: ", i + 1);
+        scanf("%f", &desconto[i]);
+
+        // Cálculo do preço com desconto
+        preco_com_desconto[i] = preco[i] - (preco[i] * desconto[i] / 100);
+
+        // Atualiza o total a pagar
+        total_a_pagar += preco_com_desconto[i];
+
+        // Limpa o buffer para a próxima leitura do nome
+        getchar();
+    }
+
+    // Exibição dos resultados
+    printf("\n--- Detalhes da Compra ---\n");
+    for (int i = 0; i < 4; i++) {
+        printf("Artigo: %s", nome[i]);
+        printf("Preço: R$ %.2f\n", preco[i]);
+        printf("Preço com desconto: R$ %.2f\n\n", preco_com_desconto[i]);
+    }
+
+    printf("Total a pagar: R$ %.2f\n", total_a_pagar);
+
+    return 0;
+}
