@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    char nome[100];
+    int numero_diarias;
+    float diaria = 60.00, taxa_servico, total_conta;
+
+    // Leitura do nome e número de diárias
+    printf("Digite o nome do cliente: ");
+    fgets(nome, sizeof(nome), stdin);
+
+    printf("Digite o número de diárias: ");
+    scanf("%d", &numero_diarias);
+
+    // Cálculo da taxa de serviços conforme o número de diárias
+    if (numero_diarias > 15) {
+        taxa_servico = 5.50;  // R$ 5.50 por diária
+    } else if (numero_diarias == 15) {
+        taxa_servico = 6.00;  // R$ 6.00 por diária
+    } else {
+        taxa_servico = 8.00;  // R$ 8.00 por diária
+    }
+
+    // Cálculo do total da conta
+    total_conta = (diaria * numero_diarias) + (taxa_servico * numero_diarias);
+
+    // Exibição do resultado
+    printf("\n--- Detalhes da Conta ---\n");
+    printf("Cliente: %s", nome);
+    printf("Número de diárias: %d\n", numero_diarias);
+    printf("Taxa de serviço por diária: R$ %.2f\n", taxa_servico);
+    printf("Total da conta: R$ %.2f\n", total_conta);
+
+    return 0;
+}
