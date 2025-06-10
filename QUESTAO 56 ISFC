@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+
+    // Leitura dos três valores
+    printf("Digite o valor de a: ");
+    scanf("%d", &a);
+
+    printf("Digite o valor de b: ");
+    scanf("%d", &b);
+
+    printf("Digite o valor de c: ");
+    scanf("%d", &c);
+
+    // Exibindo os valores lidos
+    printf("Valores: a = %d, b = %d, c = %d\n", a, b, c);
+
+    // Encontrando o maior valor
+    if (a >= b && a >= c) {
+        printf("%d É o maior\n", a);
+    } else if (b >= a && b >= c) {
+        printf("%d É o maior\n", b);
+    } else {
+        printf("%d É o maior\n", c);
+    }
+
+    return 0;
+}
