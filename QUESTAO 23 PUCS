@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int idade;
+    char sexo, corOlhos[20], corCabelos[20];
+    int totalMasculino = 0, totalFeminino = 0;
+    int totalAzul = 0, totalVerde = 0, totalCastanhoOlhos = 0;
+    int totalLouros = 0, totalCastanhos = 0, totalPretos = 0;
+    int somaIdades = 0, totalPessoas = 0;
+
+    // Laço enquanto-faça para coletar dados
+    while (1) {
+        printf("Digite a idade (negativa para encerrar): ");
+        scanf("%d", &idade);
+
+        // Condição de parada
+        if (idade < 0) {
+            break;
+        }
+
+        // Leitura dos outros dados
+        printf("Digite o sexo (M/F): ");
+        scanf(" %c", &sexo);  // O espaço antes do %c é para consumir o caractere de nova linha (\n)
+
+        printf("Digite a cor dos olhos (azuis, verdes, castanhos): ");
+        scanf("%s", corOlhos);
+
+        printf("Digite a cor dos cabelos (louros, castanhos, pretos): ");
+        scanf("%s", corCabelos);
+
+        // Acumulando dados para os cálculos
+        somaIdades += idade;
+        totalPessoas++;
+
+        if (sexo == 'M' || sexo == 'm') {
+            totalMasculino++;
+        } else if (sexo == 'F' || sexo == 'f') {
+            totalFeminino++;
+        }
+
+        // Contando as cores dos olhos
+        if (strcmp(corOlhos, "azuis") == 0) {
+            totalAzul++;
+        } else if (strcmp(corOlhos, "verdes") == 0) {
+            totalVerde++;
+        } else if (strcmp(corOlhos, "castanhos") == 0) {
+            totalCastanhoOlhos++;
+        }
+
+        // Contando as cores dos cabelos
+        if (strcmp(corCabelos, "louros") == 0) {
+            totalLouros++;
+        } else if (strcmp(corCabelos, "castanhos") == 0) {
+            totalCastanhos++;
+        } else if (strcmp(corCabelos, "pretos") == 0) {
+            totalPretos++;
+        }
+    }
+
+    // Exibindo os resultados
+    if (totalPessoas > 0) {
+        float mediaIdade = (float)somaIdades / totalPessoas;
+        printf("\nMédia de idade da população: %.2f\n", mediaIdade);
+        printf("Quantidade de homens: %d\n", totalMasculino);
+        printf("Quantidade de mulheres: %d\n", totalFeminino);
+
+        printf("\nDistribuição das cores dos olhos:\n");
+        printf("Azuis: %d\n", totalAzul);
+        printf("Verdes: %d\n", totalVerde);
+        printf("Castanhos: %d\n", totalCastanhoOlhos);
+
+        printf("\nDistribuição das cores dos cabelos:\n");
+        printf("Louros: %d\n", totalLouros);
+        printf("Castanhos: %d\n", totalCastanhos);
+        printf("Pretos: %d\n", totalPretos);
+    } else {
+        printf("\nNenhum dado foi inserido.\n");
+    }
+
+    return 0;
+}
