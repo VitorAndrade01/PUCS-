@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    char nome[100];
+    float nota_port, nota_mat, nota_geral;
+    float media;
+
+    // Leitura do nome e das notas
+    printf("Digite o nome do candidato: ");
+    fgets(nome, sizeof(nome), stdin); // lê o nome com espaços
+
+    printf("Digite a nota de Português: ");
+    scanf("%f", &nota_port);
+
+    printf("Digite a nota de Matemática: ");
+    scanf("%f", &nota_mat);
+
+    printf("Digite a nota de Conhecimentos Gerais: ");
+    scanf("%f", &nota_geral);
+
+    // Cálculo da média
+    media = (nota_port + nota_mat + nota_geral) / 3.0;
+
+    // Exibição das informações
+    printf("\n--- Resultado do Candidato ---\n");
+    printf("Nome: %s", nome);
+    printf("Nota de Português: %.2f\n", nota_port);
+    printf("Nota de Matemática: %.2f\n", nota_mat);
+    printf("Nota de Conhecimentos Gerais: %.2f\n", nota_geral);
+    printf("Média: %.2f\n", media);
+
+    // Verificação da aprovação
+    if (media > 7.0 && nota_port >= 5.0 && nota_mat >= 5.0 && nota_geral >= 5.0) {
+        printf("Situação: Aprovado\n");
+    } else {
+        printf("Situação: Reprovado\n");
+    }
+
+    return 0;
+}
