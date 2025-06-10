@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char codigo_produto[5];  // Vetor para armazenar o código do produto
+    int quantidade;
+    float preco_unitario, total;
+
+    // Leitura do código do produto
+    printf("Digite o código do produto: ");
+    scanf("%s", codigo_produto);  // Lê o código do produto como string
+
+    // Leitura da quantidade comprada
+    printf("Digite a quantidade comprada: ");
+    scanf("%d", &quantidade);
+
+    // Verificar o código do produto e atribuir o preço unitário
+    if (strcmp(codigo_produto, "ABCD") == 0) {
+        preco_unitario = 5.30;
+    } else if (strcmp(codigo_produto, "XYPK") == 0) {
+        preco_unitario = 6.00;
+    } else if (strcmp(codigo_produto, "KLMP") == 0) {
+        preco_unitario = 3.20;
+    } else if (strcmp(codigo_produto, "QRST") == 0) {
+        preco_unitario = 2.50;
+    } else {
+        printf("Código de produto inválido!\n");
+        return 1;  // Finaliza o programa em caso de código inválido
+    }
+
+    // Cálculo do preço total
+    total = preco_unitario * quantidade;
+
+    // Exibe o resultado
+    printf("Preço unitário: R$ %.2f\n", preco_unitario);
+    printf("Quantidade comprada: %d\n", quantidade);
+    printf("Preço total: R$ %.2f\n", total);
+
+    return 0;
+}
